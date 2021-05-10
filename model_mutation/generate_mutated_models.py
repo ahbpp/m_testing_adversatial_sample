@@ -10,6 +10,8 @@ import argparse
 from models.googlenet import *
 from models.lenet import *
 
+
+
 def yield_mutated_model(operator, op_type):
 
     if op_type == OP_TYPE.GF:
@@ -171,7 +173,7 @@ def run():
     test_data, channel = load_data_set(args.dataType, source_data=source_data)
     test_data_laoder = DataLoader(dataset=test_data, batch_size=64, num_workers=4)
 
-    save_path = os.path.join(args.savePath, current_timestamp().replace(" ", "_"),
+    save_path = os.path.join(args.savePath, #current_timestamp().replace(" ", "_"),
                              args.opType.lower() + str(args.mutatedRation))
 
     batch_mutated_model(model=seed_model,

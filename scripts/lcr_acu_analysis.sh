@@ -21,7 +21,7 @@ echo -e "NOTE: Our experiments are only based on two datasets: mnist and cifar10
          but it is a piece of cake to extend to other datasets only providing a \n
          proper pytorch-style data loader tailored to himself datasets."
 
-echo "To quickly verify the mutation process, we provide a group of default parameters，do you want to quickly start the
+echo "To quickly label change rate and auc statistics , we provide a group of default parameters，do you want to quickly start the
 program?y/n"
 read choice
 
@@ -32,36 +32,15 @@ read choice
 if test "$choice" = "y"
 then
     dataType=0
-<<<<<<< HEAD
     device=-1
-=======
-    device=2
->>>>>>> 4052834f1df04c1ea8d67bb049eb1bdb2d82a4e3
     useTrainData="False"
-    batchModelSize=500
-    maxModelsUsed=500
+    batchModelSize=2
+    maxModelsUsed=10
     seedModelName="lenet"
-
-
-#    testType="adv"  # normal,adv,wl
-#    testSamplesPath="../build-in-resource/dataset/mnist/adversarial/deepfool/"
-#    test_result_folder="../lcr_auc-testing-results/mnist/lenet/ns/5e-2p/deepfool/"
-
-    mutatedModelsPath="../build-in-resource/mutated_models/mnist/lenet/gf/5e-2p/"
     testType="adv"  # normal,adv,wl
-#    testSamplesPath="../artifacts_eval/adv_samples/mnist/fgsm/2019-01-04_15:45:07"
-#    testSamplesPath="../artifacts_eval/adv_samples/mnist/jsma/2019-01-04_15:48:10"
-#    testSamplesPath="../artifacts_eval/adv_samples/mnist/deepfool/2019-01-04_23:02:21"
-    testSamplesPath="../artifacts_eval/adv_samples/mnist/cw/2019-01-04_22:01:57"
-    test_result_folder="../artifacts_eval/lcr_auc-testing-results/mnist/lenet/gf/5e-2p/cw/2019-01-04_22:01:57"
-
-#    testType="wl"  # normal,adv,wl
-#    testSamplesPath="../build-in-resource/dataset/mnist/raw"
-#    test_result_folder="../lcr_auc-testing-results/mnist/lenet/ns/5e-2p/wl/"
-
-#    testType="normal"  # normal,adv,wl
-#    testSamplesPath="../build-in-resource/dataset/mnist/raw"
-#    test_result_folder="../lcr_auc-testing-results/mnist/lenet/ns/5e-2p/normal/"
+    mutatedModelsPath="../build-in-resource/mutated_models/mnist/lenet/gf/5e-2p/"
+    testSamplesPath="../build-in-resource/dataset/mnist/adversarial/jsma/"
+    test_result_folder="../lcr_auc-testing-results/mnist/lenet/gf/5e-2p/jsma/"
 else
     python $exe_file --help
     echo "Tha above is the description of each paprameter. Please input them one by one."

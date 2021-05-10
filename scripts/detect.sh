@@ -20,7 +20,7 @@ echo -e "NOTE: Our experiments are only based on two datasets: mnist and cifar10
          but it is a piece of cake to extend to other datasets only providing a \n
          proper pytorch-style data loader tailored to himself datasets."
 
-echo "To quickly verify the mutation process, we provide a group of default parameters，do you want to quickly start the
+echo "To quickly perform adversarial detection, we provide a group of default parameters，do you want to quickly start the
 program?y/n"
 
 read choice
@@ -28,8 +28,6 @@ read choice
 # read parameters
 ####################
 
-<<<<<<< HEAD
-=======
 '''
 
 threhold threhold
@@ -45,29 +43,22 @@ seedModelPath seedModelPath
 
 '''
 
->>>>>>> 4052834f1df04c1ea8d67bb049eb1bdb2d82a4e3
 if test "$choice" = "y"
 then
     # mnsit 0.05 ns,fgsm
-    threshold=0.0124
+    threshold=0.0441
     extendScale=1.0
     relaxScale=0.1
-    mutatedModelsPath="../build-in-resource/mutated_models/mnist/lenet/ns/5e-2p/"
+    mutatedModelsPath="../build-in-resource/mutated_models/mnist/lenet/nai/5e-2p/"
     alpha=0.05
     beta=0.05
-    testSamplesPath="../build-in-resource/dataset/mnist/adversarial/fgsm/"
+    testSamplesPath="../build-in-resource/dataset/mnist/adversarial/jsma/"
     dataType=0
     testType="adv"
     seedModelPath="../build-in-resource/pretrained-model/lenet.pkl"
-<<<<<<< HEAD
     device=-1
 else
-    python $exe_file -help
-=======
-    device=1
-else
     python $exe_file --help
->>>>>>> 4052834f1df04c1ea8d67bb049eb1bdb2d82a4e3
     echo "Tha above is the description of each paprameter. Please input them one by one."
     echo
 
@@ -81,10 +72,7 @@ else
     read -p "dataType:" dataType
     read -p "testType:" testType
     read -p "seedModelPath:" seedModelPath
-<<<<<<< HEAD
-=======
     read -p "mutatedModelsPath:" mutatedModelsPath
->>>>>>> 4052834f1df04c1ea8d67bb049eb1bdb2d82a4e3
     read -p "device:" device
 
 fi

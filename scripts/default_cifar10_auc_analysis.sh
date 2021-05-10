@@ -2,8 +2,8 @@
 
 function aucAnalysis(){
 
-    exe_file=../../lcr_auc/mutated_testing.py
-    analyze_file=../../lcr_auc/lcr_auc_analysis.py
+    exe_file=../lcr_auc/mutated_testing.py
+    analyze_file=../lcr_auc/lcr_auc_analysis.py
 
     ####################
     # read parameters
@@ -16,17 +16,17 @@ function aucAnalysis(){
     batchModelSize=50
     maxModelsUsed=500
     seedModelName="googlenet"
-    mutatedModelsPath="../../build-in-resource/mutated_models/cifar10/googlenet/${opType}/5e-3p/"
-    nrLcrPath="../../build-in-resource/nr-lcr/googlenet/${opType}/5e-3p/nrLCR.npy"
+    mutatedModelsPath="../build-in-resource/mutated_models/cifar10/googlenet/${opType}/5e-3p/"
+    nrLcrPath="../build-in-resource/nr-lcr/cifar10/googlenet/${opType}/5e-3p/nrLCR.npy"    
     seedModelPath=None
     testType="adv"  # normal,adv,wl
     date=`date +%Y-%m-%d-%H`
     logpath=${test_result_folder}-${date}
     totalbatches=$(( $(( $maxModelsUsed / $batchModelSize )) + $(( $maxModelsUsed % $batchModelSize )) ))
 
-    device=1
-    testSamplesPath="../../build-in-resource/dataset/cifar10/adversarial/${attatck}"
-    test_result_folder="../../artifacts_eval/lcr_auc-testing-results/cifar10/googlenet/${opType}/5e-3p/${attatck}"
+    device=-1
+    testSamplesPath="../build-in-resource/dataset/cifar10/adversarial/${attatck}"
+    test_result_folder="../artifacts_eval/lcr_auc-testing-results/cifar10/googlenet/${opType}/5e-3p/${attatck}"
     date=`date +%Y-%m-%d-%H`
     logpath=${test_result_folder}-${date}
     totalbatches=$(( $(( $maxModelsUsed / $batchModelSize )) + $(( $maxModelsUsed % $batchModelSize )) ))
@@ -99,8 +99,7 @@ function aucAnalysis(){
 
 }
 
-cd ../
-for op in "nai","gf","ns" "ws"
+for op in "ns" "gf"
 do
     for attack in "fgsm" "deepfool" "bb" "jsma" "cw"
     do

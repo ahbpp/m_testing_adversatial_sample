@@ -114,7 +114,7 @@ echo "device:"  $device
 echo "<======>Parameters=======>"
 
 
-echo "Press any key to start mutation process"
+echo "Press any key to start attack process"
 echo " CTRL+C break command bash..." # 组合键 CTRL+C 终止命令!
 char=`get_char`
 

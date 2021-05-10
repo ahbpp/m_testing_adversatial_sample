@@ -31,7 +31,7 @@ then
     dataType=0
     numMModels=10
     mutatedRation=0.001
-    opType="GF"
+    opType="NAI"
     savePath="../artifacts_eval/modelMuation/"
     device=-1
 
@@ -56,7 +56,7 @@ fi
 ##########
 # show default parameters
 ###########
-echo"=======>Parameters<======="
+echo "=======>Parameters<======="
 echo "modelName:" $modelName
 echo "modelPath:" $modelPath
 echo "accRation:" $accRation
@@ -67,6 +67,7 @@ echo "opType:" $opType
 echo "savePath:" $savePath
 echo "device:"  $device
 
+echo "<======>Parameters=======>"
 echo "Press any key to start mutation process"
 echo " CTRL+C break command bash..." # 组合键 CTRL+C 终止命令!
 char=`get_char`

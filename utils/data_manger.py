@@ -16,9 +16,7 @@ normalize_mnist = transforms.Normalize((0.1307,), (0.3081,))
 
 normalize_cifar10 = transforms.Normalize(mean=[0.4914, 0.4822, 0.4465], std=[0.247, 0.243, 0.261])
 
-
 random_seed = 5566
-
 
 DATA_MNIST = 0
 DATA_CIFAR10 = 1
