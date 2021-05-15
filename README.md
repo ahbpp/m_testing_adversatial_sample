@@ -23,7 +23,7 @@ This artifact includes four independent modules.
 Bash scripts run python files.
 
 ## Results
-### Average LCR table  
+### Average LCR table (My results)  
 | Dataset | Mutation operator | Mutation rate | Normal samples | Wrong labels | FGSM       | JSMA       | deepfool   |
 |---------|-------------------|---------------|----------------|--------------|------------|------------|------------|
 |         |                   | 0.01          | 1.51±0.21      | 13.21±1.01   | 47.12±2.35 | 50.17±2.28 | 37.67±2.11 |
@@ -34,12 +34,30 @@ Bash scripts run python files.
 | MNIST   | GF                | 0.03          | 1.51±0.33      | 27.17±1.43   | 51.87±2.59 | 59.94±2.75 | 48.13±2.37 |
 |         |                   | 0.05          | 2.73±0.53      | 33.63±1.52   | 54.94±2.72 | 62.41±2.84 | 51.55±2.64 |
 
-#### AUROC Report for MNIST Data
+#### AUROC Report for MNIST Data (My results)
 | attack   | NAI    | GF     |
 |----------|--------|--------|
 | fgsm     | 0.9705 | 0.9713 |
 | jsma     | 0.9951 | 0.9953 |
 | deepfool | 0.988  | 0.9883 |
+
+### Average LCR table (Orig paper)  
+| Dataset | Mutation operator | Mutation rate | Normal samples | Wrong labels | FGSM       | JSMA       | deepfool   |
+|---------|-------------------|---------------|----------------|--------------|------------|------------|------------|
+|         |                   | 0.01          | 1.28±0.24      | 14.58±2.64   | 47.56±3.56 | 50.80±2.46 | 37.62±2.83 |
+| MNIST   | NAI               | 0.03          | 3.06±0.44      | 27.16±3.11   | 52.12±3.04 | 57.86±2.02 | 46.61±2.43 |
+|         |                   | 0.05          | 3.88±0.53      | 32.53±3.15   | 54.54±2.80 | 59.07±1.95 | 50.30±2.24 |
+|         |                   |               |                |              |            |            |            |
+|         |                   | 0.01          | 0.57±0.30      | 16.75±3.33   | 47.87±3.54 | 56.39±2.14 | 41.07±2.76 |
+| MNIST   | GF                | 0.03          | 1.39±0.46      | 27.00±3.40   | 51.87±3.10 | 60.64±1.85 | 48.06±2.41 |
+|         |                   | 0.05          | 2.49±0.59      | 33.28±3.28   | 55.02±2.77 | 62.36±1.74 | 51.60±2.19 |
+
+#### AUROC Report for MNIST Data (Orig paper)
+| attack   | NAI    | GF     |
+|----------|--------|--------|
+| fgsm     | 0.9744 | 0.9747 |
+| jsma     | 0.9965 | 0.9975 |
+| deepfool | 0.9881 | 0.9889 |
 
 
 The folder **build-in-resource** contains some essential resources,including from original paper: 

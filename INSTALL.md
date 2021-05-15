@@ -43,10 +43,3 @@ If everything goes well, you will enter a new bash shell like:
 ```
 root@09f4131f7471:/#
 ``` 
-
-
-
-
-
-
-
