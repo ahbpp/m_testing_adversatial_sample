@@ -69,6 +69,11 @@ The folder **build-in-resource** contains some essential resources,including fro
 - nr-lcr: the label change rate of normal sampels. 
 - pretrained-model: Lenet for mnsit,and GooGleNet for cifar10.
 
+## Data
+The easiest way to download data is to copy it from the docker container. See [INSTALL](./INSTALL.md) to get docker container. 
+Then use command  `docker cp objective_black:/home/icse2019/source/build-in-resource .` to copy data.
+
+
 ## Code
 
 I slightly change sh scripts for convenience. In `scripts/lcr_normal.sh`, `scripts/lcr_adv.sh` and `scripts/generate_mutated_models.sh` parameters must be changed in sh scripts.
@@ -140,6 +145,8 @@ Run the script:
 ./generate_mutated_models.sh
 ```
 
+Change `opType` parameter to select the model mutation method and choose `mutatedRation`.
+
 You will see the following info:
 ```
 2019-01-13 13:28:47,651 - INFO - data type:mnist
@@ -165,6 +172,8 @@ Run the script to estimate LCR for normal data:
 ```
 ./lcr_normal.sh
 ```
+
+Change `mutatedModelsPath` to select muatated models. Also set `test_result_folder`.
 If everything goes well, the expected input is:
 
 ```
@@ -183,6 +192,8 @@ Total Samples Used:1000,avg_lcr:0.0151,std:0.0260,confidence(95%):0.0016,confide
 ```
 Run the script to estimate LCR for adversarial data:
 
+Change `mutatedModelsPath` to select muatated models and change `testSamplesPath` to select adversarial samples. 
+Also set `test_result_folder`.
 ```
 ./lcr_adv.sh
 ```
